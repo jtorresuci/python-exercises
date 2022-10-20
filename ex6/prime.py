@@ -1,15 +1,19 @@
 def is_prime(n) -> bool:
     check_n = 1
+    prime = True
 
     for i in range(2, n):
-        check_n = n % i
+        if(i == n):
+            continue
+        else:
+            check_n = n % i
+        
         if check_n == 0:
+            # print("Break")
+            prime = False
+            # print(check_n)
             break
-
-    if check_n != 0:
-        return True
-    else:
-        return False
+    return prime
 
 def main():
     prime_lists = []
@@ -20,12 +24,15 @@ def main():
 
     
     for num in prime_lists:
-        if not is_prime(num):
-            print(num)
+        prime = is_prime(num)
+        print(num)
+        print(prime)
+        if prime == False:
+            # print(num)
             prime_lists.remove(num)
     print(prime_lists)
 
 
 main()
 
-print(is_prime(9))
+# print(is_prime(100))
