@@ -1,17 +1,17 @@
 def main():
-    table = [
-    [16, 3, 2, 13],
-    [5, 10, 11, 8], 
-    [9, 6, 7, 12], 
-    [4, 15, 14, 1]
-    ]
-    
     # table = [
     # [16, 3, 2, 13],
-    # [5, 10, 11, 9], 
+    # [5, 10, 11, 8], 
     # [9, 6, 7, 12], 
     # [4, 15, 14, 1]
     # ]
+    
+    table = [
+    [16, 3, 2, 13],
+    [5, 10, 11, 9], 
+    [9, 6, 7, 12], 
+    [4, 15, 14, 1]
+    ]
 
     if magic_square(table):
         print("It is a magic square")
@@ -37,6 +37,12 @@ def magic_square(table):
 
         print("")
     
+
+
+    for num in row_sum_list:
+        if num != diagonal_sum:
+            return False
+
     if row_sum_list == column_sum_list and row_sum_list[0] == diagonal_sum:
         return True
     else:
