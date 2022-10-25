@@ -15,31 +15,24 @@ def shift_right(list1):
     e1 = list1[-1]
     print(e1)
     for i, e2 in enumerate(list1):
-        # print(e1)
-        print(e2)
         list1[i], e1 = e1, e2
-    # size = len(list1)
-    # last_ele = list1[size - 1]
-    # first_ele = list1[0]
-
-    # for i in range(1, size - 1):
-    #     list1[i] = list1[i + 1]
-    
     return list1
 
-
-
-
-
-
 def replace_even(list1):
-    print("replace_even")
+    for i in range(len(list1)):
+        if list1[i] % 2 == 0:
+            list1[i] = 0
 
 def replace_neighbors(list1):
-    print("replace_neighbors")
+    for i in range(1, len(list1) - 1):
+        if list1[i] < list1[i + 1]:
+            list1[i] = list1[i + 1]
 
 def remove_middle(list1):
-    print("remove_middle")
+    size = len(list1)
+    if size % 2 == 0:
+        list1.remove(list1[size//2])
+        list1.remove(list1[size//2 + 1])
 
 def even_to_front(list1):
     print("even to front")
