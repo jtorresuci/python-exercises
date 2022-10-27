@@ -21,6 +21,8 @@ def merge(a, b) -> list:
         if j < len(b):
             output.append(b[j])
             j += 1
+        
+        
     return output
 
 main()
