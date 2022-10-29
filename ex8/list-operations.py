@@ -5,12 +5,6 @@ def swap_first_last(list1):
     list1[0] = list1[last_idx]
     list1[last_idx] = temp
 
-
-# def shift_right(list1):
-#     list1 = [list1[len(list1) -1]] + list1[1:len(list1) - 1] + list1[:1]
-#     return list1
-
-
 def shift_right(list1):
     e1 = list1[-1]
     print(e1)
@@ -51,19 +45,30 @@ def even_to_front(list1):
 
 
 def second_largest(list1):
-    print("second_largest")
+    temp_list = list1
+    max_num = max(temp_list)
+    temp_list.remove(max_num)
+    max_num = max(temp_list)
+
 
 
 def is_increasing(list1):
-    print("is_increasing")
+    for i in range(len(list1) - 1):
+        if list1[i] > list1[i+1]:
+            return False
+    return True
 
 
 def has_adjacent_duplicate(list1):
-    print("has_adjacent_duplicate")
+    for i in range(len(list1) - 1):
+        if list1[i] == list1[i+1]:
+            return True
+    return False
 
 
 def has_duplicate(list1):
-    print("has_adjacent_duplicate")
+    set_list1 = set(list1)
+    return not len(set_list1) == len(list1)
 
 
 def main():
